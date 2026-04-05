@@ -1,0 +1,143 @@
+Build a modern SaaS-style website called D4Digit (d4digit.com) using:
+
+Next.js (App Router)
+Tailwind CSS
+Fully responsive design (mobile-first)
+Clean component-based structure
+🎨 UI / DESIGN SYSTEM
+
+Create a dark-themed AI tools SaaS interface inspired by modern product dashboards.
+
+Core Style:
+Background: #0b0f1a (or similar deep navy/black)
+Accent: neon blue + cyan gradients
+Glassmorphism cards (blur + transparency)
+Soft borders with low opacity
+Smooth hover transitions (scale + glow)
+Rounded corners (xl–2xl)
+Subtle shadows and glow effects
+Modern SaaS / AI product feel
+🧱 PROJECT STRUCTURE
+
+Use App Router (Next.js 13+):
+
+/app/page.tsx → Homepage
+/components/Navbar.tsx
+/components/Hero.tsx
+/components/Features.tsx
+/components/ToolsGrid.tsx
+/components/BlogSection.tsx
+/components/WhySection.tsx
+/components/Newsletter.tsx
+/components/Footer.tsx
+
+Use reusable UI components and clean props-based design.
+
+🏠 HOMEPAGE LAYOUT
+1. Navbar
+Logo: D4Digit
+Links:
+Home
+Tools
+Blog
+Contact
+CTA Button:
+“Get Started” (gradient neon glow)
+2. Hero Section
+Main Heading:
+
+“Build, Learn & Use Digital Tools in One Place”
+
+Subtext:
+
+“Discover powerful utilities, learn new skills, and accelerate your digital journey.”
+
+Buttons:
+Primary: Explore Tools (gradient neon glow)
+Secondary: Read Blog (outline style)
+Trust Badges:
+Free tools
+No signup required
+Fast & secure
+3. Features Section (3 Cards)
+
+Create 3 interactive feature cards:
+
+Tools
+Blog
+Templates (Coming soon)
+
+Each card must include:
+
+Icon (lucide-react recommended)
+Title
+Short description
+Hover animation (lift + glow)
+4. Popular Tools Section
+
+Create a responsive grid (4–6 cards):
+
+Each tool card includes:
+
+Tool name
+Short description
+Tag (e.g. “Popular”, “New”)
+CTA button: Use Tool
+Hover effect (glow + slight scale)
+5. Blog Section
+
+Display 3 blog cards:
+
+Each blog card includes:
+
+Image placeholder or gradient thumbnail
+Title
+Short excerpt
+Published date
+
+Design should feel like a modern content platform.
+
+6. Why D4Digit Section
+
+Create a clean grid of 4 points:
+
+Fast
+Free
+Learning-focused
+Scalable platform
+
+Use icons + minimal design.
+
+7. Newsletter Section
+
+Centered card layout:
+
+Email input field
+“Subscribe” button
+Gradient glow border
+Simple CTA text: “Stay updated with new tools”
+8. Footer
+
+Include:
+
+Navigation links
+Social media icons
+Copyright text:
+“© 2026 D4Digit. All rights reserved.”
+⚙️ DEVELOPMENT REQUIREMENTS
+Use Tailwind CSS only (no external UI frameworks unless necessary)
+Use clean reusable components
+Use Lucide icons
+Ensure perfect responsiveness
+Add smooth transitions & hover animations
+Keep code production-ready and minimal
+Optimize for SEO (proper headings + metadata)
+✨ EXTRA (IMPORTANT)
+
+Make it feel like a real startup landing page, not a template:
+
+Add subtle motion effects
+Add spacing consistency
+Ensure strong visual hierarchy
+Make CTA buttons visually dominant
+Keep design premium and modern
