@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Home from "@/pages/Home";
 import Tools from "@/pages/Tools";
 import BlogPage from "@/pages/Blog";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/tools" component={Tools} />
       <Route path="/blog" component={BlogPage} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );
