@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Tools", href: "/tools" },
+  { name: "Templates", href: "/templates" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -150,33 +151,35 @@ export default function Navbar() {
 
         {/* ── CTA ── */}
         <div className="hidden md:flex items-center flex-shrink-0">
-          <button
-            className="text-sm font-semibold h-10 px-6 rounded-full"
-            style={{
-              background: "rgba(0,240,255,0.08)",
-              border: "1px solid rgba(0,240,255,0.25)",
-              color: "#00f0ff",
-              transition: "all 0.25s ease",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = "linear-gradient(135deg, #00f0ff, #3b82f6)";
-              el.style.color = "#0b0f1a";
-              el.style.borderColor = "transparent";
-              el.style.boxShadow = "0 0 24px rgba(0,240,255,0.35)";
-              el.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = "rgba(0,240,255,0.08)";
-              el.style.color = "#00f0ff";
-              el.style.borderColor = "rgba(0,240,255,0.25)";
-              el.style.boxShadow = "none";
-              el.style.transform = "translateY(0)";
-            }}
-          >
-            Get Started
-          </button>
+          <Link href="/tools">
+            <button
+              className="text-sm font-semibold h-10 px-6 rounded-full"
+              style={{
+                background: "rgba(0,240,255,0.08)",
+                border: "1px solid rgba(0,240,255,0.25)",
+                color: "#00f0ff",
+                transition: "all 0.25s ease",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = "linear-gradient(135deg, #00f0ff, #3b82f6)";
+                el.style.color = "#0b0f1a";
+                el.style.borderColor = "transparent";
+                el.style.boxShadow = "0 0 24px rgba(0,240,255,0.35)";
+                el.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = "rgba(0,240,255,0.08)";
+                el.style.color = "#00f0ff";
+                el.style.borderColor = "rgba(0,240,255,0.25)";
+                el.style.boxShadow = "none";
+                el.style.transform = "translateY(0)";
+              }}
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
 
         {/* ── Mobile toggle ── */}
@@ -268,16 +271,18 @@ export default function Navbar() {
                 className="mt-3 pt-3"
                 style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
               >
-                <button
-                  className="w-full h-12 rounded-xl text-sm font-bold"
-                  style={{
-                    background: "linear-gradient(135deg, #00f0ff, #3b82f6, #a855f7)",
-                    color: "#0b0f1a",
-                    boxShadow: "0 0 20px rgba(0,240,255,0.2)",
-                  }}
-                >
-                  Get Started
-                </button>
+                <Link href="/tools" onClick={() => setIsMobileMenuOpen(false)}>
+                  <button
+                    className="w-full h-12 rounded-xl text-sm font-bold"
+                    style={{
+                      background: "linear-gradient(135deg, #00f0ff, #3b82f6, #a855f7)",
+                      color: "#0b0f1a",
+                      boxShadow: "0 0 20px rgba(0,240,255,0.2)",
+                    }}
+                  >
+                    Get Started
+                  </button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
