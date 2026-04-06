@@ -136,13 +136,55 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="pt-8 flex flex-col md:flex-row items-center justify-between gap-5"
           style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
         >
-          <p className="text-sm text-muted-foreground">
+          {/* Copyright */}
+          <p className="text-sm text-muted-foreground order-3 md:order-1">
             © 2026 D4Digit. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+
+          {/* Legal links — centered */}
+          <div className="flex items-center gap-1 order-1 md:order-2">
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Cookie Policy", href: "/cookie-policy" },
+            ].map((item, i, arr) => (
+              <span key={item.label} className="flex items-center gap-1">
+                <Link
+                  href={item.href}
+                  className="text-sm font-medium relative group"
+                  style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.2s ease" }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")
+                  }
+                >
+                  <span className="relative">
+                    {item.label}
+                    <span
+                      className="absolute -bottom-px left-0 w-0 h-px group-hover:w-full transition-all duration-300"
+                      style={{ background: "linear-gradient(90deg, #00f0ff, #3b82f6)" }}
+                    />
+                  </span>
+                </Link>
+                {i < arr.length - 1 && (
+                  <span
+                    className="text-xs select-none"
+                    style={{ color: "rgba(255,255,255,0.15)" }}
+                  >
+                    ·
+                  </span>
+                )}
+              </span>
+            ))}
+          </div>
+
+          {/* Status */}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground order-2 md:order-3">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
             All systems operational
           </div>
