@@ -77,13 +77,15 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white text-sm mb-5 uppercase tracking-widest" style={{ fontSize: "11px" }}>Product</h3>
             <ul className="space-y-3">
-              {["All Tools", "Templates", "Pricing", "Changelog"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === "All Tools" ? "/#tools" : "#"}
-                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white"
-                  >
-                    {item}
+              {[
+                { label: "All Tools", href: "/tools" },
+                { label: "Templates", href: "/templates" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "Changelog", href: "/changelog" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white">
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -94,13 +96,15 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white text-sm mb-5 uppercase tracking-widest" style={{ fontSize: "11px" }}>Resources</h3>
             <ul className="space-y-3">
-              {["Blog", "Documentation", "Guides", "Help Center"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === "Blog" ? "/#blog" : "#"}
-                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white"
-                  >
-                    {item}
+              {[
+                { label: "Blog", href: "/blog" },
+                { label: "Documentation", href: "/documentation" },
+                { label: "Guides", href: "/guides" },
+                { label: "Help Center", href: "/help" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white">
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -123,12 +127,12 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a
-                  href="mailto:hello@d4digit.com"
+                <Link
+                  href="/contact"
                   className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white flex items-center gap-2"
                 >
                   <Mail size={13} /> Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -156,12 +160,8 @@ export default function Footer() {
                   href={item.href}
                   className="text-sm font-medium relative group"
                   style={{ color: "rgba(255,255,255,0.4)", transition: "color 0.2s ease" }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")
-                  }
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}
                 >
                   <span className="relative">
                     {item.label}
@@ -172,12 +172,7 @@ export default function Footer() {
                   </span>
                 </Link>
                 {i < arr.length - 1 && (
-                  <span
-                    className="text-xs select-none"
-                    style={{ color: "rgba(255,255,255,0.15)" }}
-                  >
-                    ·
-                  </span>
+                  <span className="text-xs select-none" style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
                 )}
               </span>
             ))}

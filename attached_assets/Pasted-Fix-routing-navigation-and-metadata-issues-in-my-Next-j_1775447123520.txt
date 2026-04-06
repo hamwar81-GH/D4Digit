@@ -1,0 +1,156 @@
+Fix routing, navigation, and metadata issues in my Next.js (App Router) project called D4Digit.
+
+⚠️ IMPORTANT:
+- Do NOT redesign UI
+- Do NOT change styling
+- ONLY fix routing, linking, scrolling behavior, and missing pages
+- Maintain consistent dark SaaS theme
+
+---
+
+# 1. ADD SITE TITLE + FAVICON
+
+- Update /app/layout.tsx metadata:
+
+title: "D4Digit – Digital Tools & Learning Platform"
+description: "Discover powerful digital tools, learn new skills, and boost productivity."
+
+- Use existing D4 logo (blue background) as favicon
+- Ensure favicon is properly placed in /public/favicon.ico
+- Make sure it appears in browser tab
+
+---
+
+# 2. FIX SCROLL POSITION (VERY IMPORTANT)
+
+Problem:
+When navigating to pages like:
+- /privacy
+- /terms
+- /cookies
+- /contact
+
+The page does NOT start from top.
+
+Fix:
+- Ensure all route navigation scrolls to TOP automatically
+- Implement scroll-to-top behavior using Next.js navigation or useEffect
+
+---
+
+# 3. FIX FOOTER LEGAL LINKS
+
+Ensure these links work properly and go to TOP of page:
+
+- Privacy Policy → /privacy
+- Terms of Service → /terms
+- Cookie Policy → /cookies
+
+Use correct Next.js <Link> component.
+
+---
+
+# 4. FIX CONTACT LINK IN FOOTER
+
+- "Contact Us" must link to:
+  → /contact
+- Must open page at TOP (not mid-scroll)
+
+---
+
+# 5. FIX BROKEN FOOTER LINKS (IMPORTANT BUG)
+
+Problem:
+- "Blog" and "All Tools" in footer incorrectly redirect to homepage sections
+- Especially wrong behavior when navigating from other pages
+
+Fix:
+- Blog → /blog (NOT homepage section)
+- All Tools → /tools (NOT homepage anchor)
+
+Ensure proper routing using Next.js Link.
+
+---
+
+# 6. FIX FOOTER BRAND LOGO LINK
+
+Problem:
+Clicking "D4Digit" in footer redirects incorrectly to blog section.
+
+Fix:
+- Make it link to homepage:
+  → /
+- Ensure it loads from top
+
+---
+
+# 7. CREATE MISSING PAGES
+
+Create new pages with simple placeholder UI (same theme):
+
+Routes:
+- /templates
+- /pricing
+- /changelog
+
+Each page should include:
+- Page title
+- Short description (placeholder text)
+- Consistent dark theme
+- Proper spacing and layout
+
+---
+
+# 8. FIX FOOTER RESOURCE LINKS
+
+Currently not linked:
+- Documentation
+- Guides
+- Help Center
+
+Fix:
+- Either create pages:
+  → /documentation
+  → /guides
+  → /help
+
+OR temporarily link them to "#"
+
+Preferred: create pages with placeholder content.
+
+---
+
+# 9. FIX HOMEPAGE BUTTON LINKS
+
+Ensure these buttons route correctly:
+
+- "Get Started" → /tools
+- "Explore Tools" → /tools
+- "Read Blog" → /blog
+- "View All Tools" → /tools
+- "Read All Articles" → /blog
+
+Use Next.js Link component.
+
+---
+
+# 10. ENSURE CONSISTENCY
+
+- All links must use Next.js <Link>
+- No anchor-based navigation unless intentional
+- All pages must open from TOP
+- No broken or incorrect redirects
+
+---
+
+# FINAL GOAL
+
+Make the entire website behave like a real multi-page SaaS product:
+
+- Clean routing
+- Correct navigation
+- No broken links
+- Proper page loading behavior
+- Smooth user experience
+
+DO NOT change UI design — only fix functionality and routing.

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 const posts = [
@@ -90,8 +91,8 @@ export default function Blog() {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className="flex-shrink-0"
           >
-            <a
-              href="#"
+            <Link
+              href="/blog"
               className="group inline-flex items-center text-sm font-semibold transition-all duration-300"
               style={{ color: "#00f0ff" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "white")}
@@ -99,7 +100,7 @@ export default function Blog() {
             >
               View all articles
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </motion.div>
         </div>
 

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Shield, CheckCircle2 } from "lucide-react";
 
@@ -86,28 +87,32 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
         >
-          <Button
-            size="lg"
-            className="group w-full sm:w-auto text-base h-13 px-9 rounded-full font-semibold text-black transition-all duration-300 btn-glow"
-            style={{
-              background: "linear-gradient(135deg, #00f0ff 0%, #3b82f6 60%, #a855f7 100%)",
-            }}
-          >
-            Explore Tools
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto text-base h-13 px-9 rounded-full font-medium transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:scale-[1.02]"
-            style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              color: "white",
-            }}
-          >
-            Read Blog
-          </Button>
+          <Link href="/tools">
+            <Button
+              size="lg"
+              className="group w-full sm:w-auto text-base h-13 px-9 rounded-full font-semibold text-black transition-all duration-300 btn-glow"
+              style={{
+                background: "linear-gradient(135deg, #00f0ff 0%, #3b82f6 60%, #a855f7 100%)",
+              }}
+            >
+              Explore Tools
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
+          <Link href="/blog">
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto text-base h-13 px-9 rounded-full font-medium transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:scale-[1.02]"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                color: "white",
+              }}
+            >
+              Read Blog
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Trust badges */}
