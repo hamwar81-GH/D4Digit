@@ -111,10 +111,14 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white text-sm mb-5 uppercase tracking-widest" style={{ fontSize: "11px" }}>Legal</h3>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white">
-                    {item}
+              {[
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Cookie Policy", href: "#" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-muted-foreground transition-colors duration-200 hover:text-white">
+                    {item.label}
                   </Link>
                 </li>
               ))}
