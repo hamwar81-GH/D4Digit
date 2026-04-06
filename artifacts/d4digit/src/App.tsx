@@ -8,6 +8,7 @@ import Tools from "@/pages/Tools";
 import BlogPage from "@/pages/Blog";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/blog" component={BlogPage} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={Privacy} />
+      <Route path="/terms-of-service" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );
