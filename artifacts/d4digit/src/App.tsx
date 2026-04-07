@@ -19,6 +19,17 @@ import Guides from "@/pages/Guides";
 import Help from "@/pages/Help";
 import NotFound from "@/pages/not-found";
 
+import { supabase } from "@/lib/supabase";
+
+const testSupabase = async () => {
+  const { data, error } = await supabase.from("blogs").select("*");
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+};
+
+testSupabase();
+
 const queryClient = new QueryClient();
 
 function Router() {
